@@ -1,7 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 
 const StreamSchema = new mongoose.Schema({
-    type: { type: String, required: true }, // Enum if needed
+    url: { type: String, required: true },
     active: { type: Boolean, default: true },
     upvotes: [{ type: Schema.Types.ObjectId, ref: "Upvote" }],
     userId: { type: Schema.Types.ObjectId, ref: "User", required: true },

@@ -4,6 +4,7 @@ import userRouter from "./routes/user.routes.js"
 import connectDB from "./config/db.js";
 import cors from "cors"
 import streamRouter from "./routes/stream.routes.js";
+import upvoteRouter from "./routes/upvote.routes.js";
 
 dotenv.config();
 const app = express()
@@ -26,6 +27,7 @@ connectDB()
 //Routes
 app.use('/api/user',userRouter)
 app.use('/api/stream',streamRouter)
+app.use('/api/upvote',upvoteRouter)
 
 app.get('/',(req,res)=>{
     res.send('Hello World')

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 const StreamSchema = new mongoose.Schema({
     type: { type: String, required: true }, // Enum if needed
@@ -7,5 +7,5 @@ const StreamSchema = new mongoose.Schema({
     userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
   });
 
-const Stream = mongoose.Model("Stream", StreamSchema);
+const Stream = mongoose.model("Stream", StreamSchema);
 export default Stream
